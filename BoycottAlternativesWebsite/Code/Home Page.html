@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>Alternatives</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        #search-bar {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Alternetaives</h1>
+    <p>Use the search bar below to find what is the best to buy:</p>
+    
+   
+        <form id="search-form"> 
+            <input type="text" id="search-bar" name="q" placeholder="Search...">
+            <button type="submit" class="search-button" Value ="search">Search</button>
+        </form>
+
+
+    
+
+    <div id="search-results">
+    </div>
+
+    <script>
+        const searchForm = document.getElementById('search-form');
+        const searchResults = document.getElementById('search-results');
+
+        const keywordMappings = {
+            'cheese': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Cheese.html',
+            'water': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Water.html',
+            'soda': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Soda.html',
+            'snacks': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Sancks.html',
+            'fast food': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Fast%20Food.html',
+            'electronics': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Electronics.html',
+            'cosmatics': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Cosmetics.html',
+            'cafe': 'file:///D:/NU/Freshman/Semester%201/CSC/2nd%20Project/Code/Alt%20Cafe.html',
+
+           
+        };
+
+        searchForm.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            const keyword = document.getElementById('search-bar').value.toLowerCase();
+
+            
+            if (keywordMappings.hasOwnProperty(keyword)) {
+                
+                window.location.href = keywordMappings[keyword];
+            } else {
+                
+                searchResults.innerHTML = 'Keyword not found. Please try another keyword.';
+            }
+        });
+    </script>
+<br>
+<b>
+<a href="About us Page.html" target = "Frame 2"> About Us </a>
+<br>
+<br>
+<video width="500px" height="300px" controls="controls">
+<source src="video.webm" type="video/mp4"/>
+</video>
+</body>
+</html>
